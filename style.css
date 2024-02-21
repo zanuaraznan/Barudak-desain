@@ -1,0 +1,299 @@
+:root {
+    --primary: #ed8e39;
+    --bg: #121212;
+}
+
+*,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+/* body */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(#151515f7, #151515f7), url(wallpaperflare.com_wallpaper.jpg);
+    background-size: cover;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* body */
+
+/* navbar */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    position: fixed;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    background-color: #ffffff03;
+    backdrop-filter: blur(3px);
+    border-radius: 0.5rem;
+    border: 0.8px solid #ffffff11;
+}
+
+.navbar-nav > * {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0px 20px;
+    color: #777;
+}
+
+.navbar-nav > *:hover {
+    color: #ccc;
+}
+
+.navbar-nav a:first-child {
+    color: #ed8e3988;
+    pointer-events: none;
+}
+
+.navbar .search-box {
+    background: transparent;
+    border-bottom: 0.8px solid #ffffff11;
+    padding: 0;
+    width: 0vw;
+    font-size: 0.7rem;
+    transition: all 0.4s ease;
+}
+
+.search-box.active {
+    transition: all 0.4s ease;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    padding: 0 5px;
+    font-size: 0.7rem;
+    width: 20vw;
+    cursor: text;
+}
+
+.search-box.active:hover {
+    color: #777;
+}
+
+/* List display */
+.list {
+    display: none;
+}
+
+/* Mobile Phone */
+@media (max-width: 360px) {
+    .list {
+        display: block;
+    }
+    .navbar-nav .menu-link {
+        display: none;
+    }
+}
+/* Navbar */
+
+/* Hero Section */
+[class*="page-"] {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 4rem;
+    line-height: 3.5rem;
+}
+
+.container h1 span {
+    color: var(--primary);
+}
+
+.container h4 {
+    width: 40vw;
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+
+.cta {
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff03;
+    border: 0.8px solid #ffffff33;
+    color: #aaa;
+    transition: all 0.2s ease;
+}
+
+/* sosmed */
+.sosmed {
+    display: flex;
+    height: 5vh;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.sosmed a {
+    font-size: 0.8rem;
+    color: #777;
+    transition: all 0.2s ease;
+    padding: 20px;
+}
+
+.sosmed a:hover {
+    font-size: 1rem;
+}
+
+.container a {
+    pointer-events: visible;
+}
+
+.container a:hover {
+    color: #ccc;
+}
+
+.sosmed + a:hover {
+    background-color: #ffffff11;
+}
+
+/* our works */
+.page-2 {
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-2 h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.page-2 p {
+    font-size: 0.6rem;
+    font-weight: 300;
+    text-align: center;
+    width: 50vw;
+}
+
+.gambar {
+    margin-top: 30px;
+    display: grid;
+    width: auto;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    pointer-events: visible;
+}
+
+.gambar::after {
+    content: "";
+    height: 100px;
+}
+
+[class*="frame"] {
+    display: flex;
+    position: relative;
+    margin: 7px;
+    width: 18vw;
+    height: 18vw;
+    background-size: 100%;
+    background-position: center;
+    transition: all 0.2s ease;
+}
+
+[class*="frame"]::after {
+    content: "\F62C";
+    font-family: "Bootstrap-icons";
+    font-size: 2rem;
+    position: absolute;
+    color: #ccc;
+    background-color: #121212aa;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 28vh;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+[class*="frame"]:hover::after {
+    opacity: 1;
+}
+
+[class*="frame"]:hover {
+    background-size: 120%;
+}
+
+.frame1 {
+    background-image: url(project/cover.jpeg);
+}
+.frame2 {
+    background-image: url(project/illustration.jpeg);
+}
+.frame3 {
+    background-image: url(project/web-1.jpeg);
+}
+.frame4 {
+    background-image: url(project/logo-1.png), linear-gradient(#547caa, #547caa);
+}
+.frame5 {
+    background-image: url(project/web-2.jpeg);
+}
+.frame6 {
+    background-image: url(project/logo-2.jpeg);
+}
+
+.hidden-el {
+    opacity: 0;
+    transform: translateX(-20%);
+    transition: all 0.5s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease;
+}
